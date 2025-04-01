@@ -90,21 +90,23 @@ header .container-animation .blob:nth-child(3) {
   }
 }
 header .nav-container {
-  display: flex;
+  display: none;
   position: fixed;
-  right: 0;
-  top: 0;
-  background: #323232;
+  right: 0.5rem;
+  top: 0.5rem;
+  background-color: #323232;
+  border-radius: 20px;
 }
 header .nav-container .nav-list {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   gap: 1.2rem;
   flex-direction: column;
+  margin: 2rem 2rem 2rem;
 }
 header .nav-container .nav-list li a {
-  color: #141313;
+  color: #ffffff;
   font-size: 1.3rem;
   font-weight: 600;
   padding: 0.5rem 1rem;
@@ -124,7 +126,6 @@ header .container-ham {
   justify-content: center;
   flex-direction: column;
   gap: 0.3rem;
-  transition: 2s ease-in-out;
   top: 1rem;
   right: 0;
   margin: 0 20px;
@@ -134,7 +135,8 @@ header .container-ham .ham {
   width: 20px;
   background-color: #ffffff;
   height: 2px;
+  transition: all 0.2s linear;
 }
-header .container-ham:active span {
-  width: 5px;
+header .container-ham:active .ham {
+  width: 15px;
 }/*# sourceMappingURL=style.css.map */

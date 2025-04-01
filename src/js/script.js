@@ -1,9 +1,10 @@
-const menuHam = document.getElementsByClassName('menu-ham');
-const navbar = document.getElementsByClassName('.nav-container');
+const menuHam = document.getElementById('ham')
+const navbar = document.getElementById('nav')
 
 function clickMenu() {
   navbar.style.display =
-    navbar.style.display === 'flex' ? 'none' : 'flex';
+    navbar.style.display === 'flex' ? 'none' : 'flex'
 }
 
-menuHamburguer.addEventListener("click", clickMenu)
+
+menuHam.addEventListener("click", clickMenu)
