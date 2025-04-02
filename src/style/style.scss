@@ -44,6 +44,7 @@ header {
       border-radius: 50%;
       filter: blur(20px);
       opacity: 0.8;
+      z-index: -999;
 
       &:nth-child(1) {
         width: 150px;
@@ -163,6 +164,80 @@ header {
     &:active {
       .ham {
         width: 15px;
+      }
+    }
+  }
+}
+
+main {
+  .container-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 6.5rem;
+    padding: 2rem 0;
+
+    h1 {
+      position: relative;
+      font-size: 2.8rem;
+      font-weight: 800;
+      text-align: center;
+      color: $text;
+      z-index: 1;
+    }
+
+    p {
+      font-size: 1.4rem;
+      font-weight: 400;
+      text-align: center;
+      color: $text;
+      max-width: 600px;
+    }
+  }
+
+  .experiencia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 2rem 0;
+    gap: 10px;
+
+    h2 {
+      background: linear-gradient(90deg, $text 0%, $roxo-secundario 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    .container-icons-habilidade {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+
+      .icon-habilidade {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        img {
+          width: 40px;
+          height: 40px;
+          filter: grayscale(100%);
+          opacity: 0.2;
+          transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+          &:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+          }
+        }
       }
     }
   }
