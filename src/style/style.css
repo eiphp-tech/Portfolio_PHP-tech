@@ -13,11 +13,28 @@ body {
   color: #ffffff;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in, main .experiencia, main .container-intro h1,
+main .container-intro p {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
 header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 header .container-animation {
   position: absolute;
@@ -94,9 +111,10 @@ header .nav-container {
   display: none;
   position: fixed;
   right: 0.5rem;
-  top: 0.5rem;
+  top: 1.8rem;
   background-color: #323232;
   border-radius: 20px;
+  z-index: 10000;
 }
 header .nav-container .nav-list {
   display: flex;
@@ -127,10 +145,11 @@ header .container-ham {
   justify-content: center;
   flex-direction: column;
   gap: 0.3rem;
-  top: 1rem;
+  top: 3rem;
   right: 0;
   margin: 0 20px;
   cursor: pointer;
+  z-index: 10001;
 }
 header .container-ham .ham {
   width: 20px;
@@ -156,7 +175,7 @@ main .container-intro h1 {
   font-weight: 800;
   text-align: center;
   color: #ffffff;
-  z-index: 1;
+  z-index: 10;
 }
 main .container-intro p {
   font-size: 1.4rem;

@@ -22,11 +22,28 @@ body {
   color: $text;
 }
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
 header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 10;
 
   .container-animation {
     position: absolute;
@@ -110,9 +127,10 @@ header {
     display: none;
     position: fixed;
     right: 0.5rem;
-    top: 0.5rem;
+    top: 1.8rem;
     background-color: $gray;
     border-radius: 20px;
+    z-index: 10000;
 
     .nav-list {
       display: flex;
@@ -149,10 +167,11 @@ header {
     justify-content: center;
     flex-direction: column;
     gap: 0.3rem;
-    top: 1rem;
+    top: 3rem;
     right: 0;
     margin: 0 20px;
     cursor: pointer;
+    z-index: 10001;
 
     .ham {
       width: 20px;
@@ -184,7 +203,7 @@ main {
       font-weight: 800;
       text-align: center;
       color: $text;
-      z-index: 1;
+      z-index: 10;
     }
 
     p {
@@ -193,6 +212,11 @@ main {
       text-align: center;
       color: $text;
       max-width: 600px;
+    }
+
+    h1,
+    p {
+      @extend .fade-in;
     }
   }
 
@@ -204,6 +228,8 @@ main {
     margin-top: 2rem;
     padding: 2rem 0;
     gap: 10px;
+
+    @extend .fade-in;
 
     h2 {
       background: linear-gradient(90deg, $text 0%, $roxo-secundario 100%);
