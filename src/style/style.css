@@ -285,7 +285,7 @@ main .projetos h2 span {
 }
 main .projetos .container-projetos {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   flex-wrap: wrap;
@@ -314,7 +314,8 @@ main .projetos .container-projetos .projeto h3 {
   margin: 0.5rem 0 0 0.5rem;
 }
 main .projetos .container-projetos .projeto p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  padding: 0 10px 0 0;
   color: #ffffff;
   font-weight: 400;
   margin: 0.5rem 0 0 0.5rem;
@@ -438,7 +439,7 @@ main .contato .container-form .button-form {
   background-color: #323232;
   color: #ffffff;
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 0.5rem 0;
   border-radius: 20px;
   border: none;
@@ -446,9 +447,9 @@ main .contato .container-form .button-form {
   transition: all 0.3s ease-in-out;
 }
 main .contato .container-form .button-form:hover {
-  background-color: #323232;
-  opacity: 0.7;
+  background-color: #957fef;
   transition: all 0.3s ease-in-out;
+  color: #141313;
 }
 
 footer {
@@ -766,7 +767,7 @@ footer .social-links a img:hover {
     align-items: flex-end;
   }
   header .nav-container .nav-list li a {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     padding: 0;
   }
   header .container-ham {
@@ -794,30 +795,33 @@ footer .social-links a img:hover {
     height: 40px;
   }
   main .sobre h2 {
-    font-size: 1.7rem;
-    width: 70%;
+    font-size: 2.4rem;
   }
   main .sobre span {
-    font-size: 1.8rem;
+    font-size: 2.4rem;
   }
   main .sobre p {
     font-size: 1.2rem;
   }
   main .projetos h2 {
-    font-size: 1.9rem;
+    font-size: 2.3rem;
     width: 70%;
   }
   main .projetos span {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
   main .projetos .container-projetos {
     flex-direction: row;
+    width: 100%;
   }
   main .projetos .container-projetos .projeto {
-    max-width: 300px;
+    max-width: 500px;
+  }
+  main .projetos .container-projetos .projeto figure img {
+    max-width: 600px;
   }
   main .projetos .container-projetos .projeto h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   main .projetos .container-projetos .projeto p {
     font-size: 1.1rem;
@@ -826,23 +830,23 @@ footer .social-links a img:hover {
     font-size: 1.1rem;
   }
   main .contato h2 {
-    font-size: 1.7rem;
+    font-size: 2.7rem;
   }
   main .contato h4 {
-    font-size: 1.3rem;
+    font-size: 2rem;
   }
   main .contato .container-form {
     width: 90%;
-    max-width: 550px;
+    max-width: 850px;
   }
   main .contato .container-form .container-input {
     width: 100%;
   }
   main .contato .container-form .container-input label {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   main .contato .container-form .container-input input {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   main .contato .container-form .container-input textarea {
     font-size: 1.2rem;
@@ -854,7 +858,8 @@ footer .social-links a img:hover {
   footer {
     flex-direction: row-reverse;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 0 10px 5px;
+    margin-top: 1rem;
   }
   footer .social-links {
     gap: 2rem;
