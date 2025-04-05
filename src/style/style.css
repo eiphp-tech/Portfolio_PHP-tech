@@ -30,7 +30,7 @@ main .container-intro p {
   animation: fadeInUp 1s ease-out forwards;
 }
 
-.container-animation {
+.container-animation, .container-animation-small, .container-animation-medium {
   position: absolute;
   top: -5rem;
   left: -5rem;
@@ -41,27 +41,27 @@ main .container-intro p {
   align-items: center;
   z-index: -1000;
 }
-.container-animation .blob {
+.container-animation .blob, .container-animation-small .blob, .container-animation-medium .blob {
   position: absolute;
   border-radius: 50%;
   filter: blur(20px);
   opacity: 0.8;
   z-index: -999;
 }
-.container-animation .blob:nth-child(1) {
+.container-animation .blob:nth-child(1), .container-animation-small .blob:nth-child(1), .container-animation-medium .blob:nth-child(1) {
   width: 150px;
   height: 150px;
   background-color: #7209b7;
   animation: moveAround1 5s infinite alternate ease-in-out;
 }
-.container-animation .blob:nth-child(2) {
+.container-animation .blob:nth-child(2), .container-animation-small .blob:nth-child(2), .container-animation-medium .blob:nth-child(2) {
   width: 100px;
   height: 100px;
   background-color: #957fef;
   animation: moveAround2 6s infinite alternate ease-in-out;
   animation-delay: 1s;
 }
-.container-animation .blob:nth-child(3) {
+.container-animation .blob:nth-child(3), .container-animation-small .blob:nth-child(3), .container-animation-medium .blob:nth-child(3) {
   width: 80px;
   height: 80px;
   background-color: #9d4edd;
@@ -100,6 +100,14 @@ main .container-intro p {
   100% {
     transform: translate(-40px, -30px) scale(1);
   }
+}
+
+.container-animation-medium {
+  display: none;
+}
+
+.container-animation-small {
+  display: none;
 }
 
 header {
@@ -322,7 +330,7 @@ main .projetos .container-projetos .projeto .container-button-link {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  margin: 0.5rem;
+  margin: 1.5rem 0.5rem 0.5rem 0.5rem;
   padding: 0 1.5rem;
 }
 main .projetos .container-projetos .projeto .container-button-link .button-link {
@@ -343,4 +351,190 @@ main .projetos .container-projetos .projeto .container-button-link .button-link:
 main .projetos .container-projetos .projeto:hover {
   border: #999999 solid 1px;
   transition: all 0.3s ease-in-out;
+}
+main .contato {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+main .contato h2 {
+  font-size: 1.7rem;
+  text-align: center;
+  width: 90%;
+  color: #ffffff;
+  font-weight: 500;
+}
+main .contato h4 {
+  font-size: 1.3rem;
+  text-align: center;
+  width: 90%;
+  color: #999999;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+main .contato .container-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 90%;
+  max-width: 350px;
+  position: relative;
+}
+main .contato .container-form .container-input {
+  width: 90%;
+  border-bottom: #323232 solid 1px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 15px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+main .contato .container-form .container-input label {
+  font-size: 1.2rem;
+  color: #ffffff;
+  font-weight: 400;
+}
+main .contato .container-form .container-input input {
+  width: 100%;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+main .contato .container-form .container-input input::-moz-placeholder {
+  text-align: right;
+}
+main .contato .container-form .container-input input::placeholder {
+  text-align: right;
+}
+main .contato .container-form .container-input input:focus {
+  border-bottom: #957fef solid 1px;
+  transition: all 0.3s ease-in-out;
+}
+main .contato .container-form .container-input textarea {
+  width: 100%;
+  height: 40%;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border: none;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+main .contato .container-form .message {
+  flex-direction: column;
+}
+main .contato .container-form .button-form {
+  width: 100%;
+  background-color: #323232;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+main .contato .container-form .button-form:hover {
+  background-color: #323232;
+  opacity: 0.7;
+  transition: all 0.3s ease-in-out;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 0 0;
+  gap: 20px;
+}
+footer .social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+footer .social-links a img {
+  width: 30px;
+  height: 30px;
+  filter: grayscale(100%);
+  opacity: 1;
+  transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+footer .social-links a img:hover {
+  filter: grayscale(0%);
+  opacity: 0.5;
+}
+
+@media screen and (min-width: 520px) and (max-width: 834px) {
+  .container-animation, .container-animation-medium, .container-animation-small {
+    top: -5.6rem;
+  }
+  .container-animation-small {
+    display: block;
+    top: 15rem;
+    left: 2rem;
+    width: 200px;
+    height: 200px;
+    opacity: 1;
+  }
+  .container-animation-small .blob:nth-child(1) {
+    width: 70px;
+    height: 70px;
+    animation: moveAround3 5s infinite alternate ease-in-out;
+  }
+  .container-animation-small .blob:nth-child(2) {
+    width: 50px;
+    height: 50px;
+    animation: moveAround2 6s infinite alternate ease-in-out;
+  }
+  .container-animation-small .blob:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    animation: moveAround1 7s infinite alternate ease-in-out;
+  }
+  @keyframes moveAround3 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(30px, -40px) scale(1.2);
+    }
+    100% {
+      transform: translate(-30px, 40px) scale(1);
+    }
+  }
+  @keyframes moveAround2 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(-40px, 50px) scale(1.3);
+    }
+    100% {
+      transform: translate(40px, -50px) scale(1);
+    }
+  }
+  @keyframes moveAround1 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(40px, 30px) scale(1.1);
+    }
+    100% {
+      transform: translate(-40px, -30px) scale(1);
+    }
+  }
 }/*# sourceMappingURL=style.css.map */
