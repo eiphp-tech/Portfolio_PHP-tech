@@ -15,28 +15,11 @@ $text: #ffffff;
   text-decoration: none;
   font-family: "Nunito", sans-serif;
   border: none;
-  // outline: red solid 1px;
 }
 
 body {
   background-color: $bg;
   color: $text;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
 }
 
 .container-animation {
@@ -133,6 +116,7 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
+  animation: fadeIn 0.8s ease-in-out forwards;
 
   .nav-container {
     display: none;
@@ -142,6 +126,7 @@ header {
     background-color: $gray;
     border-radius: 20px;
     z-index: 10000;
+    animation: slideDown 0.5s ease-out forwards;
 
     .nav-list {
       display: flex;
@@ -152,6 +137,11 @@ header {
       margin: 2rem 2rem 2rem;
 
       li {
+        transform: translateY(20px);
+        opacity: 0;
+        animation: slideUpFadeIn 0.4s ease-out forwards;
+        animation-delay: calc(0.1s * var(--item-index, 0));
+
         a {
           color: $text;
           font-size: 1.3rem;
@@ -183,6 +173,7 @@ header {
     margin: 0 20px;
     cursor: pointer;
     z-index: 10001;
+    animation: fadeIn 1s ease-in-out forwards;
 
     .ham {
       width: 20px;
@@ -207,12 +198,14 @@ main {
     flex-direction: column;
     margin-top: 6.5rem;
     padding: 2rem 0;
+    animation: fadeInUp 1s ease-out forwards;
 
     h1 {
       font-size: 2.8rem;
       font-weight: 800;
       text-align: center;
       color: $text;
+      animation: glowText 3s ease-in-out infinite alternate;
     }
 
     p {
@@ -221,11 +214,8 @@ main {
       text-align: center;
       color: $text;
       max-width: 600px;
-    }
-
-    h1,
-    p {
-      @extend .fade-in;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 0.5s forwards;
     }
   }
 
@@ -237,8 +227,9 @@ main {
     margin-top: 2rem;
     padding: 2rem 0;
     gap: 10px;
-
-    @extend .fade-in;
+    opacity: 1;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
 
     h2 {
       background: linear-gradient(90deg, $text 0%, $roxo-secundario 100%);
@@ -247,6 +238,7 @@ main {
       -webkit-text-fill-color: transparent;
       display: inline-block;
       font-size: 1.8rem;
+      position: relative;
     }
 
     .container-icons-habilidade {
@@ -261,6 +253,10 @@ main {
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        transform: translateY(20px);
+        opacity: 0;
+        animation: fadeInUp 0.5s ease-out forwards;
+        animation-delay: calc(0.1s * var(--item-index, 0));
 
         img {
           width: 40px;
@@ -268,10 +264,12 @@ main {
           filter: grayscale(100%);
           opacity: 0.2;
           transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+          animation: pulse 3s infinite alternate;
 
           &:hover {
             filter: grayscale(0%);
             opacity: 1;
+            animation: wiggle 0.5s ease-in-out;
           }
         }
       }
@@ -285,19 +283,26 @@ main {
     flex-direction: column;
     padding: 2rem 0;
     gap: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.3s;
 
     h2 {
-      font-size: 1.7rem;
+      font-size: 1.4rem;
       text-align: center;
       width: 90%;
       color: #999999;
       font-weight: 500;
 
       span {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         color: $text;
         opacity: 1;
         font-weight: 700;
+        position: relative;
+        display: inline-block;
+        animation: highlight 5s ease-in-out infinite;
       }
     }
 
@@ -309,6 +314,8 @@ main {
       max-width: 600px;
       color: #c0c0c0;
       width: 90%;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 0.5s forwards;
     }
   }
 
@@ -319,6 +326,10 @@ main {
     flex-direction: column;
     padding: 2rem 0;
     gap: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.4s;
 
     h2 {
       font-size: 1.7rem;
@@ -331,6 +342,9 @@ main {
         font-size: 1.8rem;
         color: $text;
         font-weight: 700;
+        position: relative;
+        display: inline-block;
+        animation: highlight 5s ease-in-out infinite;
       }
     }
 
@@ -348,15 +362,22 @@ main {
         max-width: 380px;
         border-radius: 20px;
         border: $gray solid 1px;
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.7s ease-out forwards;
+        animation-delay: calc(0.2s * var(--item-index, 0));
+        transition: all 0.3s ease-in-out;
 
         figure {
           width: 100%;
-          border-radius: 20px;
+          border-radius: 20px 20px 0 0;
+          overflow: hidden;
 
           img {
             width: 100%;
             max-width: 380px;
             border-radius: 20px 20px 0 0;
+            transition: transform 0.5s ease-in-out;
           }
         }
 
@@ -397,22 +418,37 @@ main {
             background-color: $gray;
             border: none;
             cursor: pointer;
+            transition: all 0.3s ease-in-out;
 
             a {
               img {
                 height: 30px;
+                transition: transform 0.3s ease-in-out;
               }
             }
 
             &:hover {
               background-color: $roxo-secundario;
               transition: all 0.3s ease-in-out;
+              transform: translateY(-3px);
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+              a img {
+                transform: scale(1.1);
+              }
             }
           }
         }
+
         &:hover {
           border: #999999 solid 1px;
           transition: all 0.3s ease-in-out;
+          transform: translateY(-5px) scale(1.02);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+          figure img {
+            transform: scale(1.05);
+          }
         }
       }
     }
@@ -424,6 +460,10 @@ main {
     justify-content: center;
     flex-direction: column;
     padding: 2rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+    animation-delay: 0.5s;
 
     h2 {
       font-size: 1.7rem;
@@ -431,6 +471,7 @@ main {
       width: 90%;
       color: $text;
       font-weight: 500;
+      position: relative;
     }
 
     h4 {
@@ -440,6 +481,8 @@ main {
       color: #999999;
       font-weight: 500;
       margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 0.7s forwards;
     }
 
     .container-form {
@@ -460,11 +503,15 @@ main {
         justify-content: center;
         gap: 15px;
         height: fit-content;
+        opacity: 0;
+        animation: fadeIn 0.7s ease-out forwards;
+        animation-delay: calc(0.2s * var(--item-index, 0));
 
         label {
           font-size: 1.2rem;
           color: $text;
           font-weight: 400;
+          transition: all 0.3s ease-in-out;
         }
 
         input {
@@ -484,6 +531,11 @@ main {
           &:focus {
             border-bottom: $roxo-secundario solid 1px;
             transition: all 0.3s ease-in-out;
+
+            & + label {
+              color: $roxo-secundario;
+              transform: translateY(-5px) scale(0.95);
+            }
           }
         }
 
@@ -515,11 +567,20 @@ main {
         border: none;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
+        opacity: 0;
+        animation: fadeIn 1s ease-out 1s forwards;
 
         &:hover {
           background-color: $roxo-secundario;
           transition: all 0.3s ease-in-out;
           color: $bg;
+          transform: translateY(-3px);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        &:active {
+          transform: translateY(-1px);
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
       }
     }
@@ -533,6 +594,8 @@ footer {
   flex-direction: column;
   padding: 2rem 0 0;
   gap: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1s forwards;
 
   .social-links {
     display: flex;
@@ -541,6 +604,11 @@ footer {
     gap: 1.5rem;
 
     a {
+      transform: translateY(10px);
+      opacity: 0;
+      animation: fadeInUp 0.5s ease-out forwards;
+      animation-delay: calc(0.1s * var(--item-index, 0));
+
       img {
         width: 30px;
         height: 30px;
@@ -551,9 +619,101 @@ footer {
         &:hover {
           filter: grayscale(0%);
           opacity: 0.5;
+          animation: wiggle 0.5s ease-in-out;
         }
       }
     }
+  }
+}
+
+/* Keyframes para as animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+}
+
+@keyframes highlight {
+  0% {
+    color: $text;
+  }
+  50% {
+    color: $roxo-secundario;
+  }
+  100% {
+    color: $text;
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }
 

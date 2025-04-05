@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 * {
   margin: 0;
@@ -12,22 +13,6 @@
 body {
   background-color: #141313;
   color: #ffffff;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-.fade-in, main .experiencia, main .container-intro h1,
-main .container-intro p {
-  opacity: 0;
-  animation: fadeInUp 1s ease-out forwards;
 }
 
 .container-animation, .container-animation-small, .container-animation-medium {
@@ -116,6 +101,7 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
+  animation: fadeIn 0.8s ease-in-out forwards;
 }
 header .nav-container {
   display: none;
@@ -125,6 +111,7 @@ header .nav-container {
   background-color: #323232;
   border-radius: 20px;
   z-index: 10000;
+  animation: slideDown 0.5s ease-out forwards;
 }
 header .nav-container .nav-list {
   display: flex;
@@ -133,6 +120,12 @@ header .nav-container .nav-list {
   gap: 1.2rem;
   flex-direction: column;
   margin: 2rem 2rem 2rem;
+}
+header .nav-container .nav-list li {
+  transform: translateY(20px);
+  opacity: 0;
+  animation: slideUpFadeIn 0.4s ease-out forwards;
+  animation-delay: calc(0.1s * var(--item-index, 0));
 }
 header .nav-container .nav-list li a {
   color: #ffffff;
@@ -160,6 +153,7 @@ header .container-ham {
   margin: 0 20px;
   cursor: pointer;
   z-index: 10001;
+  animation: fadeIn 1s ease-in-out forwards;
 }
 header .container-ham .ham {
   width: 20px;
@@ -178,12 +172,14 @@ main .container-intro {
   flex-direction: column;
   margin-top: 6.5rem;
   padding: 2rem 0;
+  animation: fadeInUp 1s ease-out forwards;
 }
 main .container-intro h1 {
   font-size: 2.8rem;
   font-weight: 800;
   text-align: center;
   color: #ffffff;
+  animation: glowText 3s ease-in-out infinite alternate;
 }
 main .container-intro p {
   font-size: 1.4rem;
@@ -191,6 +187,8 @@ main .container-intro p {
   text-align: center;
   color: #ffffff;
   max-width: 600px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
 }
 main .experiencia {
   display: flex;
@@ -200,6 +198,9 @@ main .experiencia {
   margin-top: 2rem;
   padding: 2rem 0;
   gap: 10px;
+  opacity: 1;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out 0.2s forwards;
 }
 main .experiencia h2 {
   background: linear-gradient(90deg, #ffffff 0%, #957fef 100%);
@@ -208,6 +209,7 @@ main .experiencia h2 {
   -webkit-text-fill-color: transparent;
   display: inline-block;
   font-size: 1.8rem;
+  position: relative;
 }
 main .experiencia .container-icons-habilidade {
   display: flex;
@@ -221,6 +223,10 @@ main .experiencia .container-icons-habilidade .icon-habilidade {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: calc(0.1s * var(--item-index, 0));
 }
 main .experiencia .container-icons-habilidade .icon-habilidade img {
   width: 40px;
@@ -228,10 +234,12 @@ main .experiencia .container-icons-habilidade .icon-habilidade img {
   filter: grayscale(100%);
   opacity: 0.2;
   transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  animation: pulse 3s infinite alternate;
 }
 main .experiencia .container-icons-habilidade .icon-habilidade img:hover {
   filter: grayscale(0%);
   opacity: 1;
+  animation: wiggle 0.5s ease-in-out;
 }
 main .sobre {
   display: flex;
@@ -240,19 +248,26 @@ main .sobre {
   flex-direction: column;
   padding: 2rem 0;
   gap: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.3s;
 }
 main .sobre h2 {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   text-align: center;
   width: 90%;
   color: #999999;
   font-weight: 500;
 }
 main .sobre h2 span {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   color: #ffffff;
   opacity: 1;
   font-weight: 700;
+  position: relative;
+  display: inline-block;
+  animation: highlight 5s ease-in-out infinite;
 }
 main .sobre p {
   font-size: 1.3rem;
@@ -262,6 +277,8 @@ main .sobre p {
   max-width: 600px;
   color: #c0c0c0;
   width: 90%;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
 }
 main .projetos {
   display: flex;
@@ -270,6 +287,10 @@ main .projetos {
   flex-direction: column;
   padding: 2rem 0;
   gap: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.4s;
 }
 main .projetos h2 {
   font-size: 1.7rem;
@@ -282,6 +303,9 @@ main .projetos h2 span {
   font-size: 1.8rem;
   color: #ffffff;
   font-weight: 700;
+  position: relative;
+  display: inline-block;
+  animation: highlight 5s ease-in-out infinite;
 }
 main .projetos .container-projetos {
   display: flex;
@@ -297,15 +321,22 @@ main .projetos .container-projetos .projeto {
   max-width: 380px;
   border-radius: 20px;
   border: #323232 solid 1px;
+  transform: translateY(30px);
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out forwards;
+  animation-delay: calc(0.2s * var(--item-index, 0));
+  transition: all 0.3s ease-in-out;
 }
 main .projetos .container-projetos .projeto figure {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
 }
 main .projetos .container-projetos .projeto figure img {
   width: 100%;
   max-width: 380px;
   border-radius: 20px 20px 0 0;
+  transition: transform 0.5s ease-in-out;
 }
 main .projetos .container-projetos .projeto h3 {
   font-size: 1.3rem;
@@ -341,17 +372,29 @@ main .projetos .container-projetos .projeto .container-button-link .button-link 
   background-color: #323232;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 main .projetos .container-projetos .projeto .container-button-link .button-link a img {
   height: 30px;
+  transition: transform 0.3s ease-in-out;
 }
 main .projetos .container-projetos .projeto .container-button-link .button-link:hover {
   background-color: #957fef;
   transition: all 0.3s ease-in-out;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+main .projetos .container-projetos .projeto .container-button-link .button-link:hover a img {
+  transform: scale(1.1);
 }
 main .projetos .container-projetos .projeto:hover {
   border: #999999 solid 1px;
   transition: all 0.3s ease-in-out;
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+main .projetos .container-projetos .projeto:hover figure img {
+  transform: scale(1.05);
 }
 main .contato {
   display: flex;
@@ -359,6 +402,10 @@ main .contato {
   justify-content: center;
   flex-direction: column;
   padding: 2rem 0;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: 0.5s;
 }
 main .contato h2 {
   font-size: 1.7rem;
@@ -366,6 +413,7 @@ main .contato h2 {
   width: 90%;
   color: #ffffff;
   font-weight: 500;
+  position: relative;
 }
 main .contato h4 {
   font-size: 1.3rem;
@@ -374,6 +422,8 @@ main .contato h4 {
   color: #999999;
   font-weight: 500;
   margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.7s forwards;
 }
 main .contato .container-form {
   display: flex;
@@ -394,11 +444,15 @@ main .contato .container-form .container-input {
   gap: 15px;
   height: -moz-fit-content;
   height: fit-content;
+  opacity: 0;
+  animation: fadeIn 0.7s ease-out forwards;
+  animation-delay: calc(0.2s * var(--item-index, 0));
 }
 main .contato .container-form .container-input label {
   font-size: 1.2rem;
   color: #ffffff;
   font-weight: 400;
+  transition: all 0.3s ease-in-out;
 }
 main .contato .container-form .container-input input {
   width: 100%;
@@ -419,6 +473,10 @@ main .contato .container-form .container-input input::placeholder {
 main .contato .container-form .container-input input:focus {
   border-bottom: #957fef solid 1px;
   transition: all 0.3s ease-in-out;
+}
+main .contato .container-form .container-input input:focus + label {
+  color: #957fef;
+  transform: translateY(-5px) scale(0.95);
 }
 main .contato .container-form .container-input textarea {
   width: 100%;
@@ -445,11 +503,19 @@ main .contato .container-form .button-form {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1s forwards;
 }
 main .contato .container-form .button-form:hover {
   background-color: #957fef;
   transition: all 0.3s ease-in-out;
   color: #141313;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+main .contato .container-form .button-form:active {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 footer {
@@ -459,12 +525,20 @@ footer {
   flex-direction: column;
   padding: 2rem 0 0;
   gap: 20px;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1s forwards;
 }
 footer .social-links {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+}
+footer .social-links a {
+  transform: translateY(10px);
+  opacity: 0;
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: calc(0.1s * var(--item-index, 0));
 }
 footer .social-links a img {
   width: 30px;
@@ -476,8 +550,92 @@ footer .social-links a img {
 footer .social-links a img:hover {
   filter: grayscale(0%);
   opacity: 0.5;
+  animation: wiggle 0.5s ease-in-out;
 }
 
+/* Keyframes para as animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glowText {
+  0% {
+    text-shadow: 0 0 0px rgba(255, 255, 255, 0);
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+}
+@keyframes highlight {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: #957fef;
+  }
+  100% {
+    color: #ffffff;
+  }
+}
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 @media screen and (min-width: 520px) and (max-width: 834px) {
   .container-animation, .container-animation-medium, .container-animation-small {
     top: -5.6rem;
