@@ -81,10 +81,10 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className="w-full fixed top-0 left-0 right-0 z-50 px-6 lg:px-[7rem] py-2 shadow-lg">
+    <nav className="w-full fixed top-0 left-0 right-0 bg-neutral-950/80 z-50 px-6 lg:px-[7rem] py-2 shadow-lg">
       <div className="flex justify-between items-center">
-        <div className="flex items-center">
-          <img src="/logo.svg" alt="" />
+        <div className="flex items-center w-6">
+          <img src="/logo.svg" alt="logo pedro henrique" className="w-full" />
         </div>
 
         <div
@@ -141,11 +141,11 @@ const Navbar = () => {
           >
             <div
               ref={linkContainerRef}
-              className="h-full flex flex-col justify-between"
+              className="h-full flex flex-col justify-around"
             >
-              <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-10">
+              <div className="flex flex-col md:justify-between lg:flex-row lg:items-end gap-10">
                 <div>
-                  <h3 className="text-gray-400 text-lg font-extrabold mb-6 mt-10 lg:mt-0">
+                  <h3 className="text-gray-400 text-lg  font-extrabold mb-6 mt-10 lg:mt-0 ">
                     #Connect
                   </h3>
                   <div className="space-y-4">
@@ -188,14 +188,14 @@ const Navbar = () => {
                 </div>
               </div>
 
-              <div className="flex h-max flex-col md:flex-row lg:flex-row lg:items-end gap-10 lg:mt-10">
+              <div className="flex h-max flex-col mt-10 lg:mt-0  lg:flex-row lg:items-end gap-5">
                 <div>
-                  <p className="text-gray-400 te">
+                  <p className="text-neutral-400">
                     Do you want to start your project now?
                   </p>
                   <EmailLink
                     email="pedrohdev01@gmail.com"
-                    styleName="text-[30px] font-semibold bg-gradient-to-r from-white via-gray-400 to-neutral-900 bg-clip-text text-transparent p-1 transition-all duration-500 hover:text-white"
+                    styleName="text-[20px] font-semibold bg-gradient-to-r from-white via-gray-400 to-neutral-900 bg-clip-text text-transparent p-1 transition-all duration-500 hover:text-white"
                   />
                 </div>
                 <div className="flex items-end pb-2 ">
