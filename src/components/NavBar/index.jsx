@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react"
 import gsap from "gsap"
 import EmailLink from "../ButtonEmail"
 import { ScrollToPlugin } from "gsap/ScrollToPlugin"
+import { menuItems, socialLinks } from "../../data/NavBar"
 
 gsap.registerPlugin(ScrollToPlugin)
 
@@ -67,19 +68,6 @@ const Navbar = () => {
     closeMenu()
   }
 
-  const menuItems = [
-    { label: "Início", id: "home" },
-    { label: "Sobre", id: "sobre" },
-    { label: "Projeto", id: "projeto" },
-    { label: "Contato", id: "contato" },
-  ]
-
-  const socialLinks = [
-    { label: "LinkedIn", url: "#" },
-    { label: "Instagram", url: "#" },
-    { label: "Dribbble", url: "#" },
-  ]
-
   return (
     <nav className="w-full fixed top-0 left-0 right-0 bg-neutral-950/80 z-50 px-6 lg:px-[7rem] py-2 shadow-lg">
       <div className="flex justify-between items-center">
@@ -94,7 +82,7 @@ const Navbar = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           <div
-            className="flex items-center cursor-pointer text-white z-50 relative"
+            className="flex items-center cursor-pointer text-neutral-50 z-50 relative"
             onClick={toggleMenu}
           >
             <div className="overflow-hidden h-6 mr-4 relative w-14">
@@ -153,7 +141,7 @@ const Navbar = () => {
                       <a
                         key={link.label}
                         href={link.url}
-                        className="block font-medium text-neutral-700 text-2xl lg:text-3xl hover:text-white hover:translate-x-2 transition-all duration-300"
+                        className="block font-medium text-neutral-700 text-2xl lg:text-3xl hover:text-neutral-50 hover:translate-x-2 transition-all duration-300"
                       >
                         {link.label}
                       </a>
@@ -166,7 +154,7 @@ const Navbar = () => {
                     <div key={item.id} className="relative group w-fit">
                       <button
                         onClick={() => scrollToSection(item.id)}
-                        className="text-neutral-600 text-4xl lg:text-5xl font-bold group-hover:text-white transition-all duration-500"
+                        className="text-neutral-600 text-4xl lg:text-5xl font-bold group-hover:text-neutral-50 transition-all duration-500"
                       >
                         {item.label}
                       </button>
@@ -180,7 +168,7 @@ const Navbar = () => {
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="text-neutral-600 text-5xl font-bold hover:text-white hover:translate-x-1 transition-all duration-300 text-left"
+                      className="text-neutral-600 text-5xl font-bold hover:text-neutral-50 hover:translate-x-1 transition-all duration-300 text-left"
                     >
                       {item.label}
                     </button>
@@ -195,11 +183,11 @@ const Navbar = () => {
                   </p>
                   <EmailLink
                     email="pedrohdev01@gmail.com"
-                    styleName="text-[20px] font-semibold bg-gradient-to-r from-white via-gray-400 to-neutral-900 bg-clip-text text-transparent p-1 transition-all duration-500 hover:text-white"
+                    styleName="text-[20px] font-semibold bg-gradient-to-r from-white via-gray-400 to-neutral-900 bg-clip-text text-transparent p-1 transition-all duration-500 hover:text-neutral-50"
                   />
                 </div>
                 <div className="flex items-end pb-2 ">
-                  <p className="block font-medium text-neutral-700 text-2xl lg:text-3xl hover:text-white hover:translate-x-2 transition-all duration-300">
+                  <p className="block font-medium text-neutral-700 text-2xl lg:text-3xl hover:text-neutral-50 hover:translate-x-2 transition-all duration-300">
                     + 55 34 999646334
                   </p>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
 import { gsap } from "gsap"
 import Heading from "../../Heading"
+import { skill } from "../../../data/skill"
 
 const animationDefaults = { duration: 0.6, ease: "expo.out" }
 
@@ -76,24 +77,16 @@ function ServiceItem({ title }) {
 }
 
 export default function ServicesSection() {
-  const services = [
-    { title: "Design de Interfaces" },
-    { title: "Desenvolvimento Front-End" },
-    { title: "SEO e Performance" },
-    { title: "Identidade Visual" },
-    { title: "Design Responsivo" },
-  ]
-
   return (
     <section
       id="servico"
       className="bg-neutral-950 min-h-screen w-full flex flex-col justify-center items-start"
     >
       <div className="px-6 lg:px-[7rem]">
-        <Heading>Serviços</Heading>
+        <Heading>Habilidade | Skill</Heading>
       </div>
       <ul className="w-full">
-        {services.map((service, index) => (
+        {skill.map((service, index) => (
           <ServiceItem key={index} {...service} />
         ))}
       </ul>
