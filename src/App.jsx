@@ -4,6 +4,11 @@ import Heading from "./components/Heading"
 import SkillMenu from "./components/UI/SkillMenu"
 import ProjectsSection from "./components/Project"
 import Cards from "./components/Cards"
+import { Contato } from "./components/Contato"
+
+alert(
+  "O formulario de contato ainda não está funcioandando, estout trabalhando para funcionar"
+)
 
 export default function App() {
   return (
@@ -78,11 +83,14 @@ export default function App() {
         </section>
 
         {/* Contato */}
-        <section id="contato" className=" h-10 px-6 lg:px-[7rem]"></section>
+        <section id="contato" className=" min-h-screen p-20 px-6 lg:px-[7rem]">
+          <Heading>Contato</Heading>
+          <Contato />
+        </section>
 
         {/* Footer */}
         <section className=" h-10 px-6 lg:px-[7rem]">
-          <p className="text-sm font-bold text-neutral-500">
+          <p className="my-10 text-sm font-bold text-neutral-500">
             © 2025 Pedro Henrique. Todos Direitos Reservados.
           </p>
         </section>
