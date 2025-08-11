@@ -5,8 +5,4 @@ import tailwindcss from "@tailwindcss/vite"
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  define: {
-    // Remove PropTypes em produção automaticamente
-    "process.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
-  },
 })

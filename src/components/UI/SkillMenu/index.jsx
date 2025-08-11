@@ -56,7 +56,7 @@ function ServiceItem({ title }) {
   return (
     <li
       ref={itemRef}
-      className="relative overflow-hidden border-b border-neutral-700 py-6 lg:py-2 px-6 lg:px-[7rem] cursor-pointer group"
+      className="relative overflow-hidden border-b border-neutral-700 py-6 lg:py-2 px-6 lg:px-[7rem]  group"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

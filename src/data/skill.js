@@ -3,5 +3,5 @@ export const skill = [
   { title: "HTML" },
   { title: "CSS | SASS" },
   { title: "ReactJS" },
-  { title: "Figma" },
+  { title: "Figma & Canva" },
 ]

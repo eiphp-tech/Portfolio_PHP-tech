@@ -141,7 +141,8 @@ const Navbar = () => {
                       <a
                         key={link.label}
                         href={link.url}
-                        className="block font-medium text-neutral-700 text-2xl lg:text-3xl hover:text-neutral-50 hover:translate-x-2 transition-all duration-300"
+                        target="_blank"
+                        className="block font-medium text-white lg:text-neutral-700 text-2xl lg:text-3xl hover:text-neutral-50 hover:translate-x-2 transition-all duration-300"
                       >
                         {link.label}
                       </a>
@@ -154,7 +155,7 @@ const Navbar = () => {
                     <div key={item.id} className="relative group w-fit">
                       <button
                         onClick={() => scrollToSection(item.id)}
-                        className="text-neutral-600 text-4xl lg:text-5xl font-bold group-hover:text-neutral-50 transition-all duration-500"
+                        className="text-white lg:text-neutral-700 text-4xl lg:text-5xl font-bold group-hover:text-neutral-50 transition-all duration-500"
                       >
                         {item.label}
                       </button>
@@ -168,7 +169,7 @@ const Navbar = () => {
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className="text-neutral-600 text-5xl font-bold hover:text-neutral-50 hover:translate-x-1 transition-all duration-300 text-left"
+                      className="text-white lg:text-neutral-700 text-5xl font-bold hover:text-neutral-50 hover:translate-x-1 transition-all duration-300 text-left"
                     >
                       {item.label}
                     </button>
@@ -179,7 +180,7 @@ const Navbar = () => {
               <div className="flex h-max flex-col mt-10 lg:mt-0  lg:flex-row lg:items-end gap-5">
                 <div>
                   <p className="text-neutral-400">
-                    Do you want to start your project now?
+                    Quer começar seu projeto agora?
                   </p>
                   <EmailLink
                     email="pedrohdev01@gmail.com"
@@ -188,7 +189,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-end pb-2 ">
                   <p className="block font-medium text-neutral-700 text-2xl lg:text-3xl hover:text-neutral-50 hover:translate-x-2 transition-all duration-300">
-                    + 55 34 999646334
+                    + 55 (34) 9 99646334
                   </p>
                 </div>
               </div>

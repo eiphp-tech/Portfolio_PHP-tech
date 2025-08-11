@@ -1,12 +1,17 @@
 export const depoimentos = [
   {
-    depoimento: "Minh is seriously the best and he never complains",
+    depoimento: "Depoimento do Marcos Paulo",
     title: "Marcos Paulo",
     empresa: "Marcos Fotografia",
   },
   {
-    depoimento: "Pedro é um profissional excelente e muito criativo",
+    depoimento: "Depoimento da Paulinha",
     title: "Paula",
     empresa: "Paula Carvalaho Transporte",
+  },
+  {
+    depoimento: "Depoimento da Eduarda",
+    title: "Eduarda Ribeiro",
+    empresa: "",
   },
 ]
