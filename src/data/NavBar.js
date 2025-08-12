@@ -10,6 +10,5 @@ export const socialLinks = [
     label: "LinkedIn",
     url: "https://www.linkedin.com/in/pedro-henrique-pereira-j/",
   },
-  { label: "GitHub", url: "https://github.com/eiphp-tech" },
-  { label: "Dribbble", url: "https://dribbble.com/PehhDev" },
+  { label: "GitHub", url: "https://github.com/eiphp-tech" }
 ]
